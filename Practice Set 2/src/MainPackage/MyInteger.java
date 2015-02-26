@@ -16,21 +16,37 @@ package MainPackage;
 
 public class MyInteger {
 	private int value;
-
+	
 	public MyInteger(int newValue) {
 		this.value = newValue;
 	}
-
+	
+/* main method that tests various methods in class MyInteger
+	public static void main(String[] args) {
+		MyInteger a = new MyInteger(5);
+		MyInteger b = new MyInteger(6);
+		System.out.println(isPrime(a));
+		System.out.println(isPrime(b));
+		System.out.println(isOdd(a));
+		System.out.println(isEven(b));
+		System.out.println(a.equals(5));
+		System.out.println(a.equals(2));
+		System.out.println(a.equals(b));
+		char[] Array = {'1', '5', '3'};
+		System.out.println(parseInt(Array));
+		System.out.println(parseInt("5"));
+	}
+*/
 	public int getValue() {
 		return this.value;
 	}
 
 	public boolean isEven() {
-		return this.value % 2 == 0;
+		return isEven(this.value);
 	}
 
 	public boolean isOdd() {
-		return this.value % 2 != 0;
+		return isOdd(this.value);
 	}
 
 	public boolean isPrime() {
@@ -49,7 +65,7 @@ public class MyInteger {
 		if (value % 2 == 0)
 			return false;
 		for (int i = 3; i * i <= value; i += 2)
-			// definition of prime number
+			// one of the theorems for primality
 			if (value % i == 0)
 				return false;
 		return true;
