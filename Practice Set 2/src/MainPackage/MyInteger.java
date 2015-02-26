@@ -1,4 +1,4 @@
-/**Author: Jae Yoo. Github URL: 
+/**Author: Jae Yoo. Github URL: https://github.com/zenithrising/PS2.git
  * In MainPackage: class 'MyInteger' with attribute int 'value'.
  *Methods:
  *A constructor that creates a MyInteger object for the specified int value.
@@ -17,10 +17,6 @@ package MainPackage;
 public class MyInteger {
 	private int value;
 
-	public static void main(String[] args) {
-		//testMyInteger{} would go here
-	}
-
 	public MyInteger(int newValue) {
 		this.value = newValue;
 	}
@@ -30,37 +26,23 @@ public class MyInteger {
 	}
 
 	public boolean isEven() {
-		if (this.value % 2 == 0)
-			return true;
-		return false;
+		return this.value % 2 == 0;
 	}
 
 	public boolean isOdd() {
-		if (this.value % 2 != 0)
-			return true;
-		return false;
+		return this.value % 2 != 0;
 	}
 
 	public boolean isPrime() {
-		if (this.value % 2 == 0)
-			return false;
-		for (int i = 3; i * i <= this.value; i += 2)
-			// definition of prime number
-			if (this.value % i == 0)
-				return false;
-		return true;
+		return isPrime(this.value);
 	}
 
 	public static boolean isEven(int value) {
-		if (value % 2 == 0)
-			return true;
-		return false;
+		return value % 2 == 0;
 	}
 
 	public static boolean isOdd(int value) {
-		if (value % 2 != 0)
-			return true;
-		return false;
+		return value % 2 != 0;
 	}
 
 	public static boolean isPrime(int value) {
@@ -81,20 +63,22 @@ public class MyInteger {
 		return integer.isOdd();
 	}
 
+	public static boolean isPrime(MyInteger integer) {
+		return integer.isPrime();
+	}
+
 	public boolean equals(int number) {
 		return this.value == number;
 	}
 
 	public boolean equals(MyInteger integer) {
-		if (this.value == integer.value)
-			return true;
-		return false;
+		return this.value == integer.value;
 	}
-	
+
 	public static int parseInt(char[] chars) {
 		return parseInt(new String(chars));
 	}
-	
+
 	public static int parseInt(String string) {
 		return Integer.parseInt(string);
 	}
